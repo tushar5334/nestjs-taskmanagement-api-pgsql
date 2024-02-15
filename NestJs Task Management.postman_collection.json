@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "89a4174b-0470-40e5-bc2d-7e6cdf0f07fd",
+		"name": "NestJs Task Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16392246",
+		"_collection_link": "https://planetary-star-353699.postman.co/workspace/My-Workspace~01aaa307-919e-4e89-9443-e660400d9833/collection/16392246-89a4174b-0470-40e5-bc2d-7e6cdf0f07fd?action=share&source=collection_link&creator=16392246"
+	},
+	"item": [
+		{
+			"name": "Get All Tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/tasks?status=OPEN",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "OPEN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Task By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/tasks/23a00cb3-4bf4-4401-981d-3de1ab65694a",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tasks",
+						"23a00cb3-4bf4-4401-981d-3de1ab65694a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Task By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/tasks/0dc48dce-33d6-49da-99f7-7bbc1264bd2d",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tasks",
+						"0dc48dce-33d6-49da-99f7-7bbc1264bd2d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "tushar.patil@tristatetechnology.co.in",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Dhaval@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/auth/signup",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "tushar.patil@tristatetechnology.co.in",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Dhaval@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/auth/signin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Auth Route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/test",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Task 4\",\r\n    \"description\": \"Description 4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tasks",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Update Task 2.1\",\r\n    \"description\":\"Update Description 2.1\",\r\n    \"status\":\"OPEN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/tasks/23a00cb3-4bf4-4401-981d-3de1ab65694a",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"tasks",
+						"23a00cb3-4bf4-4401-981d-3de1ab65694a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup with single file upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "dhaval",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Dhaval@123",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/C:/Users/tristate/Desktop/sample_files/file_example_GIF_500kB.gif"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/auth/signup-with-single-upload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signup-with-single-upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signup with multiple file upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "dhaval",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Dhaval@123",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": [
+								"/C:/Users/tristate/Desktop/sample_files/file_example_GIF_500kB.gif",
+								"/C:/Users/tristate/Desktop/sample_files/file_example_JPG_100kB.jpg",
+								"/C:/Users/tristate/Desktop/sample_files/file_example_PNG_500kB.png"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/auth/signup-with-multiple-upload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signup-with-multiple-upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Image",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/file_example_PNG_500kB-1010b0.png",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"file_example_PNG_500kB-1010b0.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get image publically",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/avatar/file_example_PNG_500kB-1010b0.png",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"avatar",
+						"file_example_PNG_500kB-1010b0.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Public Image From Controller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/public/file_example_PNG_500kB-1010b0.png",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"public",
+						"file_example_PNG_500kB-1010b0.png"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
